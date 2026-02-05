@@ -1,0 +1,5 @@
+Data drift is the sudden or gradual change in the distribution of data over time. where the relationship between
+the input variable (X) and the target variable (Y) remains stable (unlike concept drift). This change in distribution
+is commonly caused by a multitude of factors, including changes in the data source, economic shifts / market trends, and poor preprocessing of the data.
+Data Drift significantly hinders the performance of machine learning models and declines their accuracy causing them
+to be ineffective in the real world. Overall, while data drift can sometimes be unpredictable, there are solutions to mitigate its effects.
