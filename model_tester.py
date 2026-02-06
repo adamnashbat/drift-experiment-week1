@@ -18,7 +18,7 @@ model.fit(X_train,Y_train)
 
 predict_test = model.predict(X_test)
 baseline_accuracy = accuracy_score(Y_test, predict_test)
-print("Baseline Accuracy: ", baseline_accuracy)
+print("Baseline Accuracy: ", round(baseline_accuracy*100,2),"%")
 
 drift_df = pd.read_csv("data/iris_drifted.csv")
 
@@ -27,6 +27,6 @@ y_drift = drift_df["species"]
 
 predicted_drift = model.predict(x_drift)
 drifted_accuracy = accuracy_score(y_drift, predicted_drift)
-print("Drift Accuracy: ", drifted_accuracy)
+print("Drift Accuracy: ", round(drifted_accuracy*100,2), "%")
 
 print("Drop in Accuracy: ", round(((baseline_accuracy-drifted_accuracy)*100),2),"%")
