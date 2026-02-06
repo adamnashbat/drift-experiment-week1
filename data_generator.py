@@ -11,8 +11,17 @@ DATA_DIR = BASE_DIR / "data"
 def load_data():
     # Load iris
     iris = load_iris()
-    df = pd.DataFrame(iris.data, columns=iris.feature_names)
+
+    df = pd.DataFrame(
+        iris.data,
+        columns=iris.feature_names
+    )
+
+    # Add target as species name
+    df["species"] = [iris.target_names[i] for i in iris.target]
+
     return df
+
 
 
 def inject_drift(df):
@@ -25,6 +34,7 @@ def inject_drift(df):
 def main():
     # Load clean (no drift) data
     df = load_data()
+    df = df.sample(frac=1, random_state=42).reset_index(drop=True)
 
     # Save normal dataset
     df.to_csv(DATA_DIR / "iris_train.csv", index=False)
