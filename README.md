@@ -1,0 +1,2 @@
+when evaluated on a test split from the original data, the model achieved a baseline accuracy of 100%. When the same model was evaluated on the drifted data set (without retraining) it achieved an accuracy score of 57.33%, which represents a drop in accuracy of 42.67%.
+this shows that the model was able to perform much better under normal conditions but failed to generalize when the data distribution changed, showing how big of an impact data drift has on model accuracy.
